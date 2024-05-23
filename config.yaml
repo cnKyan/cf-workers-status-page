@@ -12,9 +12,18 @@ settings:
   monitorLabelNoData: '无数据'
   dayInHistogramNoData: '无数据'
   dayInHistogramOperational: '一直可用'
-  dayInHistogramNotOperational: ' 事故(s)' # xx incident(s) recorded
+  dayInHistogramNotOperational: ' 故障数(s)' # xx incident(s) recorded
 
 monitors:
+  - id: openai-status
+    name: OpenAI 服务状态
+    description: '监控 OpenAI 服务状态'
+    url: 'https://oaistatus.chatshare.biz'
+    method: GET
+    expectStatus: 200
+    followRedirect: false
+    linkable: true
+
   - id: node1-chatshare-biz
     name: 电信高速节点1
     description: '电信高速节点1'
