@@ -22,7 +22,7 @@ monitors:
     method: GET
     expectStatus: 200
     followRedirect: false
-    linkable: true
+    linkable: false
 
   - id: node1-chatshare-biz
     name: 电信高速节点1
