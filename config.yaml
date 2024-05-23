@@ -1,39 +1,61 @@
 settings:
   title: 'Status Page'
-  url: 'https://status-page.eidam.dev' # used for Slack messages
+  url: 'qq46599172.workers.dev' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
-  allmonitorsOperational: 'All Systems Operational'
-  notAllmonitorsOperational: 'Not All Systems Operational'
-  monitorLabelOperational: 'Operational'
-  monitorLabelNotOperational: 'Not Operational'
-  monitorLabelNoData: 'No data'
-  dayInHistogramNoData: 'No data'
-  dayInHistogramOperational: 'All good'
-  dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
+  allmonitorsOperational: '所有节点可用'
+  notAllmonitorsOperational: '有部分节点故障'
+  monitorLabelOperational: '可用'
+  monitorLabelNotOperational: '故障'
+  monitorLabelNoData: '无数据'
+  dayInHistogramNoData: '无数据'
+  dayInHistogramOperational: '一直可用'
+  dayInHistogramNotOperational: ' 事故(s)' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: false # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
-
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
+  - id: node1-chatshare-biz
+    name: 电信高速节点1
+    description: '电信高速节点1'
+    url: 'https://node1.chatshare.biz/speedtest'
     method: GET
     expectStatus: 200
-    linkable: true # allows the title to be a link, default=true
+    followRedirect: false
+    linkable: false
 
-  - id: blog-cloudflare-com
-    name: The Cloudflare Blog
-    url: 'https://blog.cloudflare.com/'
+  - id: node2-chatshare-biz
+    name: 电信高防节点2
+    description: '电信高防节点2'
+    url: 'https://node2.chatshare.biz/speedtest'
     method: GET
     expectStatus: 200
+    followRedirect: false
+    linkable: false
+
+  - id: node3-chatshare-biz
+    name: 香港节点3
+    description: '香港节点3'
+    url: 'https://node3.chatshare.biz/speedtest'
+    method: GET
+    expectStatus: 200
+    followRedirect: false
+    linkable: false
+
+  - id: node4-chatshare-biz
+    name: Cloudflare高防节点
+    description: 'Cloudflare高防节点'
+    url: 'https://node4.chatshare.biz/speedtest'
+    method: GET
+    expectStatus: 200
+    followRedirect: false
+    linkable: false
+
+  - id: node5-chatshare-biz
+    name: 联通高速节点5
+    description: '联通高速节点5'
+    url: 'https://node5.chatshare.biz/speedtest'
+    method: GET
+    expectStatus: 200
+    followRedirect: false
+    linkable: false
