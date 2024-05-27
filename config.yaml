@@ -68,3 +68,12 @@ monitors:
     expectStatus: 200
     followRedirect: false
     linkable: false
+    
+  - id: node6-chatshare-biz
+    name: 联通高速节点6
+    description: '联通高速节点6'
+    url: 'https://node6.chatshare.biz/speedtest'
+    method: GET
+    expectStatus: 200
+    followRedirect: false
+    linkable: false
